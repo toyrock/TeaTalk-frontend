@@ -1,0 +1,11 @@
+.post__actions {
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 15px;
+}
+
+.username {
+  font-size: 12px;
+  color: gray;
+  font-weight: 700;
+}
