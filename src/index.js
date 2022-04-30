@@ -4,9 +4,10 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { Landing, Home, NotFound } from "pages";
+import { Landing, Home, NotFound, LoginPage, SignupPage, PostPage } from "pages";
 import { PrivateRoute } from "components";
 import { AuthContextProvider } from "context";
+
 
 ReactDOM.render(
   <React.StrictMode>
@@ -17,13 +18,16 @@ ReactDOM.render(
             <Route
               index
               element={
-                <PrivateRoute>
+                /*<PrivateRoute>*/
                   <Home />
-                </PrivateRoute>
+                /*</PrivateRoute>*/
               }
             />
+            {/* <Route path="/post/:id" element={<PostPage />} /> */}
             <Route path="landing" element={<Landing />} />
             <Route path="*" element={<NotFound />} />
+            <Route path="signup" element={<SignupPage />} />
+            <Route path="login" element={<LoginPage />} />
           </Route>
         </Routes>
       </AuthContextProvider>

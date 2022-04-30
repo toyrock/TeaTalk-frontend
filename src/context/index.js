@@ -2,6 +2,7 @@ import { createContext, useState, useEffect } from "react";
 import { client } from "client";
 import { useNavigate } from "react-router-dom";
 
+
 export const AuthContext = createContext();
 
 export function AuthContextProvider({ children }) {
@@ -31,8 +32,12 @@ export function AuthContextProvider({ children }) {
         password,
       });
       saveToken(response.data.token);
-      setUser(response.data.user);
-      navigate("/");
+      const findUser ={
+        username:response.data.userName,
+        email: response.data.email,
+      }
+      setUser(findUser);
+      navigate("/home");
     } catch (error) {
       console.error(error);
     }
@@ -42,16 +47,16 @@ export function AuthContextProvider({ children }) {
     try {
       const response = await client.get("/auth/verify");
       setUser(response.data.user);
-      navigate("/");
+      navigate("/home");
     } catch (error) {
-      navigate("/landing");
+      navigate("/home");
     }
   };
 
   const logout = () => {
     deleteToken();
     setUser(null);
-    navigate("/landing");
+    navigate("/home");
   };
 
   useEffect(() => {
