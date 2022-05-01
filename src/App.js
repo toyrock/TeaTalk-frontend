@@ -10,7 +10,7 @@ function App() {
   return (
     <div>
       <Navbar />
-      <FileUpload setFile={setFile}/>
+      {/* <FileUpload setFile={setFile}/> */}
       <img src={file} />
       <Outlet />
       footer

@@ -28,7 +28,7 @@ export function Home() {
     getPosts();
   }, []);
 
-!user && navigate("/login");
+// !user && navigate("/login");
   return (
     <div>
     {user? (
@@ -37,8 +37,8 @@ export function Home() {
       <AddPost getPosts={getPosts} setPosts={setPosts} />
       <code>{JSON.stringify(user)}</code>
     </div>
-    ) : (navigate("/login")
-    )}  
+    ) : <p>Go login</p>
+    }  
     </div>
   );
 }

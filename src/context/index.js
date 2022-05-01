@@ -56,7 +56,7 @@ export function AuthContextProvider({ children }) {
   const logout = () => {
     deleteToken();
     setUser(null);
-    navigate("/home");
+    navigate("/landing");
   };
 
   useEffect(() => {

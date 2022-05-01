@@ -2,7 +2,7 @@ import styles from "./Signup.module.css";
 import { useState, useContext } from "react";
 import { AuthContext } from "context";
 
-export function Signup() {
+export function Signup({handleLogin}) {
   const { signup } = useContext(AuthContext);
   const [userName, setUserName] = useState("");
   const [email, setEmail] = useState("");
@@ -14,6 +14,7 @@ export function Signup() {
   };
 
   return (
+    <div>
     <form onSubmit={handleSubmit}>
       <h2>Signup</h2>
       <label htmlFor="userName">Username:</label>
@@ -44,5 +45,7 @@ export function Signup() {
       />
       <button type ="submit">Signup</button>
     </form>
+    <div>Already a member?<button onClick={handleLogin}>Login</button></div>
+    </div>
   );
 }

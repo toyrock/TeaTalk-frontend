@@ -7,22 +7,16 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Landing, Home, NotFound, LoginPage, SignupPage, PostPage } from "pages";
 import { PrivateRoute } from "components";
 import { AuthContextProvider } from "context";
-
-
-ReactDOM.render(
-  <React.StrictMode>
+import { createRoot } from 'react-dom/client';
+const container = document.getElementById('root');
+const root = createRoot(container); // createRoot(container!) if you use TypeScript
+root.render( <React.StrictMode>
     <BrowserRouter>
       <AuthContextProvider>
         <Routes>
           <Route path="/" element={<App />}>
-            <Route
-              index
-              element={
-                /*<PrivateRoute>*/
-                  <Home />
-                /*</PrivateRoute>*/
-              }
-            />
+            <Route index element={<Home />}/>
+                       
             {/* <Route path="/post/:id" element={<PostPage />} /> */}
             <Route path="landing" element={<Landing />} />
             <Route path="*" element={<NotFound />} />
@@ -32,9 +26,7 @@ ReactDOM.render(
         </Routes>
       </AuthContextProvider>
     </BrowserRouter>
-  </React.StrictMode>,
-  document.getElementById("root")
-);
+  </React.StrictMode>);
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

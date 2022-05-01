@@ -2,6 +2,7 @@ import styles from "./Navbar.module.css";
 import { Link } from "react-router-dom";
 import { AuthContext } from "context";
 import { useContext } from "react";
+import { Login } from "components/Login"; 
 
 export function Navbar() {
   const { logout, user } = useContext(AuthContext);
@@ -10,7 +11,7 @@ export function Navbar() {
       {user && <Link to="/">Home</Link>}
       {!user && <Link to="/landing">Landing</Link>}
       {user && <button onClick={logout}>Logout</button>}
-      {user && <button onClick={Login}>Login</button>}
+      {!user && <button onClick={Login}>Login</button>}
     </nav>
   );
 }
