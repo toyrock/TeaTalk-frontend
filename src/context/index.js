@@ -37,7 +37,7 @@ export function AuthContextProvider({ children }) {
         email: response.data.email,
       }
       setUser(findUser);
-      navigate("/home");
+      navigate("/");
     } catch (error) {
       console.error(error);
     }
@@ -47,16 +47,16 @@ export function AuthContextProvider({ children }) {
     try {
       const response = await client.get("/auth/verify");
       setUser(response.data.user);
-      navigate("/home");
+      //navigate("/");
     } catch (error) {
-      navigate("/home");
+      //navigate("/");
     }
   };
 
   const logout = () => {
     deleteToken();
     setUser(null);
-    navigate("/landing");
+    navigate("/");
   };
 
   useEffect(() => {
