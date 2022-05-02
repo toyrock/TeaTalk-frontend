@@ -5,13 +5,14 @@ import { useContext } from "react";
 
 
 export function Navbar() {
-  const { logout, user, AddPost } = useContext(AuthContext);
+  const { logout, user} = useContext(AuthContext);
   return (
     <nav>
-      {user && <Link to="/">Home</Link>}
-      {user && <Link to="/AddPost">AddPost</Link>}
+      <Link to="/">Home</Link>
+      {user && <Link to="/AddPost">Add Post </Link>}
       {!user && <Link to="/login">Login</Link>}
-      {!user && <Link to="/signup">Signup</Link>}
+      {!user && <Link to="/signup">Sign Up</Link>}
+      {user && <p>{user.userName}</p>}
       {user && <button onClick={logout}>Logout</button>}
     </nav>
   );

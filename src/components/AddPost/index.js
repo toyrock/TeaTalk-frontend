@@ -28,14 +28,10 @@ const handleSubmit = async event => {
 return(
     <form onSubmit = {handleSubmit} className="post">
     <div>
-    <input name="title" value={postTitle}
-    onChange={event => setPostTitle(event.target.value)} />
-    
-    <textarea name="body" value = {postBody}
-    onChange={event => setPostBody(event.target.value)} />
+    <input name="title" value={postTitle} onChange={event => setPostTitle(event.target.value)} />
+    <textarea name="body" value = {postBody} onChange={event => setPostBody(event.target.value)} />
     <button type="submit">Post</button>
     </div>
-
     </form>
 
 )
