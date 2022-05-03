@@ -97,7 +97,7 @@ return (
               {showAll ? "Read less" : "Read more"}
             </button>
           )}
-          {user && poster === user._id ? (
+          {user && poster._id === user._id ? (
             <div>
               <button onClick={handleEdit}>Edit</button>
               <button onClick={handleDelete}>Delete</button>
@@ -105,7 +105,7 @@ return (
           ) : (
             <div>&nbsp;</div>
           )}
-          <p>{poster}</p>
+          <p>{poster.userName}</p>
         </div>
       )}
     </div>
