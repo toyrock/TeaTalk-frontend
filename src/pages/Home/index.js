@@ -43,16 +43,14 @@ export function Home() {
       <Navbar />
       <h1>All Posts</h1>   
       {user ? (
-        <div> 
-        
+        <div>
         <PostList
         posts={posts}
         setPosts={setPosts}
         getPosts={getPosts}
         />
         </div>
-      ) : (<div>
-            
+      ) : (<div>     
         <PostList
         posts={posts}
         setPosts={setPosts}

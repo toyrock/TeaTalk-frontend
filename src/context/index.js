@@ -23,6 +23,7 @@ export function AuthContextProvider({ children }) {
       email,
       password,
     });
+      navigate("/login");
   };
 
   const login = async (email, password) => {

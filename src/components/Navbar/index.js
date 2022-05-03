@@ -8,12 +8,14 @@ export function Navbar() {
   const { logout, user} = useContext(AuthContext);
   return (
     <nav>
+    
       <Link to="/">Home</Link>
-      {user && <Link to="/AddPost">Add Post </Link>}
-      {!user && <Link to="/login">Login</Link>}
-      {!user && <Link to="/signup">Sign Up</Link>}
+      {user && <Link to="/AddPost"> Add Post </Link>}
+      {!user && <Link to="/login"> Login </Link>}
+      {!user && <Link to="/signup"> Sign Up </Link>}
+      {user && <button onClick={logout}> Logout </button>}
       {user && <p>{user.userName}</p>}
-      {user && <button onClick={logout}>Logout</button>}
+  
     </nav>
   );
 }
