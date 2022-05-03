@@ -1,13 +1,14 @@
 import { Outlet } from "react-router-dom";
 import styles from "./App.module.css";
-import { Navbar,} from "components";
+import { NavbarCom} from "components";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 function App() {
   // variable to store file url
     return (
     <div>
-      <Navbar />
+      <NavbarCom />
       <Outlet />
       footer
     </div>

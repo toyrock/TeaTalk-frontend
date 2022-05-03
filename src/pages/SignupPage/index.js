@@ -1,4 +1,4 @@
-import { Navbar, Signup } from "components";
+import { NavbarCom, Signup } from "components";
 import { AuthContext } from "context";
 import { useContext } from "react";
 
@@ -6,7 +6,7 @@ export function SignupPage() {
   const { user } = useContext(AuthContext);
   return (
     <div>
-      <Navbar />
+      <NavbarCom />
       <h1>Lets Start to teatalk</h1>
       <Signup />
     </div>
