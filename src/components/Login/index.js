@@ -2,7 +2,7 @@ import styles from "./Login.module.css";
 import { AuthContext } from "context";
 import { useContext, useState } from "react";
 import { Router } from "react-router-dom";
-import {Form, Button, Nav} from "react-bootstrap"
+import {Form, Button} from "react-bootstrap"
 
 export function Login({handleSignUp}) {
   const { login } = useContext(AuthContext);
@@ -24,18 +24,17 @@ export function Login({handleSignUp}) {
           <Form.Control id="email" placeholder="Enter email"
           value={email} onChange={(e) => {
           setEmail(e.target.value);
-        }} />
+          }} />
         </Form.Group>
         <Form.Group className="mb-3" controlId="formBasicPassword">
           <Form.Label>Password</Form.Label>
           <Form.Control id="password" type="password" value={password} placeholder="Password"  onChange={(e) => {
           setPassword(e.target.value);
-        }} />
+          }} />
         </Form.Group>
-
         <Button variant="secondary" type="submit">Login</Button>
       </Form>
-      
+
        {error && <p style={{color:'red'}}>{error}</p>}
       <div>Not a member yet?<Button variant="Link" href="/signup">Sign Up</Button></div>
     
