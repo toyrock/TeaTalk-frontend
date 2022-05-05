@@ -2,6 +2,7 @@ import styles from "./Login.module.css";
 import { AuthContext } from "context";
 import { useContext, useState } from "react";
 import { Router } from "react-router-dom";
+import {Form, Button} from "react-bootstrap"
 
 export function Login({handleSignUp}) {
   const { login } = useContext(AuthContext);
@@ -17,29 +18,26 @@ export function Login({handleSignUp}) {
   };
   return (
     <div>
-    <form onSubmit={handleSubmit}>
-      <h2>Login</h2>
-      <label htmlFor="email">Email:</label>
-      <input
-        id="email"
-        value={email}
-        onChange={(e) => {
+      <Form onSubmit={handleSubmit}>
+        <Form.Group className="mb-3" controlId="formBasicEmail">
+          <Form.Label >Email address</Form.Label>
+          <Form.Control id="email" placeholder="Enter email"
+          value={email} onChange={(e) => {
           setEmail(e.target.value);
-        }}
-      />
-      <label htmlFor="password">Password:</label>
-      <input
-        id="password"
-        type="password"
-        value={password}
-        onChange={(e) => {
+          }} />
+        </Form.Group>
+        <Form.Group className="mb-3" controlId="formBasicPassword">
+          <Form.Label>Password</Form.Label>
+          <Form.Control id="password" type="password" value={password} placeholder="Password"  onChange={(e) => {
           setPassword(e.target.value);
-        }}
-      />
-      <button>login</button>
-    </form>
-   {error && <p style={{color:'red'}}>{error}</p>}
-    <div>Not a member yet?<button onClick={handleSignUp}>Sign up</button></div>
-    </div>
+          }} />
+        </Form.Group>
+        <Button variant="secondary" type="submit">Login</Button>
+      </Form>
+
+       {error && <p style={{color:'red'}}>{error}</p>}
+      <div>Not a member yet?<Button variant="Link" href="/signup">Sign Up</Button></div>
+    
+   </div>
   );
 }

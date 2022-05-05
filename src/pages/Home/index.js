@@ -1,6 +1,6 @@
 import { useContext, useState, useEffect } from "react";
 import { AuthContext } from "context";
-import { Navbar, AddPost , Post, PostList } from "components";
+import { NavbarCom, AddPost , Post, PostList } from "components";
 import styles from "./Home.module.css";
 import axios from "axios";
 
@@ -40,7 +40,7 @@ export function Home() {
  
   return (
     <div>
-      <Navbar />
+      <NavbarCom />
       <h1>All Posts</h1>   
       {user ? (
         <div>

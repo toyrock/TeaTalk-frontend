@@ -1,6 +1,7 @@
 import styles from "./Signup.module.css";
 import { useState, useContext } from "react";
 import { AuthContext } from "context";
+import {Form, Button} from "react-bootstrap"
 
 export function Signup({handleLogin}) {
   const { signup } = useContext(AuthContext);
@@ -15,37 +16,30 @@ export function Signup({handleLogin}) {
 
   return (
     <div>
-    <form onSubmit={handleSubmit}>
-      <h2>Signup</h2>
-      <label htmlFor="userName">Username:</label>
-      <input
-        id="userName"
-        value={userName}
-        onChange={(e) => {
+     <Form onSubmit={handleSubmit}>
+        <Form.Group className="mb-3" controlId="formBasicUserName">
+          <Form.Label >User Name</Form.Label>
+          <Form.Control id="userName" placeholder="Enter Username"
+          value={userName} onChange={(e) => {
           setUserName(e.target.value);
-        }}
-      />
-      <label htmlFor="email">Email:</label>
-      <input
-        id="email"
-        type="email"
-        value={email}
-        onChange={(e) => {
+          }} />
+        </Form.Group>
+        <Form.Group className="mb-3" controlId="formBasicEmail">
+          <Form.Label >Email</Form.Label>
+          <Form.Control id="email" type="email" placeholder="Enter email"
+          value={email} onChange={(e) => {
           setEmail(e.target.value);
-        }}
-      />
-      <label htmlFor="password">Password:</label>
-      <input
-        id="password"
-        type="password"
-        value={password}
-        onChange={(e) => {
+          }} />
+        </Form.Group>
+    
+        <Form.Group className="mb-3" controlId="formBasicPassword">
+          <Form.Label>Password</Form.Label>
+          <Form.Control id="password" type="password" value={password} placeholder="Password"  onChange={(e) => {
           setPassword(e.target.value);
-        }}
-      />
-      <button type ="submit">Signup</button>
-    </form>
-    <div>Already a member?<button onClick={handleLogin}>Login</button></div>
+          }} />
+        </Form.Group>
+        <Button type ="submit" variant="secondary">Signup</Button>
+     </Form>
     </div>
   );
 }

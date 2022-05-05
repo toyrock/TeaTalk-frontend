@@ -1,4 +1,4 @@
-import { Navbar, Post} from "components";
+import { NavbarCom, Post} from "components";
 import { AuthContext } from "context";
 import { useContext } from "react";
 
@@ -7,7 +7,7 @@ export function PostPage () {
 
     return (
         <div>
-          <Navbar />
+          <NavbarCom />
           <Post />
         </div>
       );

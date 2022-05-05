@@ -1,4 +1,4 @@
-import { Navbar, AddPost} from "components";
+import { NavbarCom, AddPost} from "components";
 import { AuthContext } from "context";
 import { useContext } from "react";
 
@@ -8,7 +8,7 @@ export function AddPostPage(){
 
     return (
         <div>
-          <Navbar />
+          <NavbarCom />
           <h1>Please Add Post</h1>
           <AddPost />
         </div>
