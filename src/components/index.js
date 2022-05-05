@@ -4,4 +4,4 @@ export { Login } from "./Login";
 export { Navbar } from "./Navbar";
 export { PrivateRoute } from "./PrivateRoute";
 export { Signup } from "./Signup";
-export { FileUpload } from "./FileUpload";
+export { PostList } from "./PostList";

@@ -1,10 +1,17 @@
-import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import {Post,Navbar,} from "../components";
+import { Navbar, Post} from "components";
+import { AuthContext } from "context";
+import { useContext } from "react";
 
 export function PostPage () {
-  
-  };
+  const { user } = useContext(AuthContext);
 
-}
+    return (
+        <div>
+          <Navbar />
+          <Post />
+        </div>
+      );
+    };
+
+
 
