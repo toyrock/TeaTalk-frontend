@@ -36,7 +36,7 @@ export function Login({handleSignUp}) {
       </Form>
 
        {error && <p style={{color:'red'}}>{error}</p>}
-      <div>Not a member yet?<Button variant="Link" href="/signup">Sign Up</Button></div>
+      <div className="mx-4">Not a member yet?<Button variant="Link" href="/signup">Sign Up</Button></div>
     
    </div>
   );

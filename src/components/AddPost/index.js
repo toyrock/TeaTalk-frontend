@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./AddPost.module.css";
 import axios from "axios";
 import {Form ,Button} from "react-bootstrap"
+import { useNavigate } from "react-router-dom";
 
 export function AddPost({ getPosts }) {
     const [postTitle, setPostTitle] = useState("");
@@ -36,7 +37,8 @@ return(
         <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
             <Form.Label>Post Body</Form.Label>
             <Form.Control name="body" as="textarea" rows={6} value = {postBody} onChange={event => setPostBody(event.target.value)} />
-            <Button type="submit" variant="light" size="lg" class="my-3 btn-lg btn-primary" >Post</Button>
+            <Button type="submit" variant="light" size="lg" class="my-3 btn-lg btn-primary">Post</Button>
+            navigate("/login");
             </Form.Group>
     
     </Form>

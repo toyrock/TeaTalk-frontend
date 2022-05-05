@@ -39,6 +39,7 @@ export function Signup({handleLogin}) {
           }} />
         </Form.Group>
         <Button type ="submit" variant="secondary">Signup</Button>
+      <div>Already a member ?<Button variant="Link" href="/login">Login</Button></div>
      </Form>
     </div>
   );

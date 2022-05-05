@@ -40,8 +40,8 @@ export function Home() {
  
   return (
     <div>
-      <NavbarCom />
-      <h1>All Posts</h1>   
+      <NavbarCom /> 
+      <h3 className="mx-4">Posts</h3>
       {user ? (
         <div>
         <PostList
@@ -59,5 +59,6 @@ export function Home() {
         </div>
         )}
         </div>
+     
   );
 }

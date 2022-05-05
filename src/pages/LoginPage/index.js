@@ -6,9 +6,8 @@ export function LoginPage() {
   const { user } = useContext(AuthContext);
   return (
     <div>
-      <h1>Please Login before your tea get cold</h1>
       <NavbarCom />
-      <h1>Please Login before your tea cold</h1>
+      <h3 className="mx-4">Login before your tea get cold</h3>
       <Login />
     </div>
   );

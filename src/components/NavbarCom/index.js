@@ -13,7 +13,7 @@ export function NavbarCom() {
     <div className="row">
       <div className="col-md-12">
         <Navbar bg="light" expand="lg" sticky="top">
-            <Navbar.Brand href="/">
+            <Navbar.Brand className="mx-3" href="/">
               <img
                 alt="Logo"
                 src="/teatalk-logo.png"
@@ -21,7 +21,7 @@ export function NavbarCom() {
                 height="30"
                 className="d-inline-block align-top"
              />
-            TEATALK 
+            <span className="mx-2"><b>TEATALK</b></span>
           </Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
