@@ -1,6 +1,6 @@
 import { useContext, useState, useEffect } from "react";
 import { AuthContext } from "context";
-import { NavbarCom, AddPost , Post, PostList } from "components";
+import { NavbarCom, AddPost, Post, PostList } from "components";
 import styles from "./Home.module.css";
 import axios from "axios";
 
@@ -13,8 +13,7 @@ export function Home() {
     const url = `${process.env.REACT_APP_BACKEND_URL}/posts`;
     // request config that is gonna hold the authorization
     const config = {
-      headers: {
-      },
+      headers: {},
     };
     // make the request
     const result = await axios.get(url, config);
@@ -37,28 +36,23 @@ export function Home() {
     getPosts();
   }, []);
 
- 
   return (
     <div>
-      <NavbarCom /> 
-      <h3 className="mx-4">Posts</h3>
-      {user ? (
-        <div>
-        <PostList
-        posts={posts}
-        setPosts={setPosts}
-        getPosts={getPosts}
-        />
+      <NavbarCom />
+      <div className={styles.listContainer}>
+        <div style={{ width: "50rem" }}>
+          <h3>Posts</h3>
         </div>
-      ) : (<div>     
-        <PostList
-        posts={posts}
-        setPosts={setPosts}
-        getPosts={getPosts}
-        />
-        </div>
+        {user ? (
+          <div>
+            <PostList posts={posts} setPosts={setPosts} getPosts={getPosts} />
+          </div>
+        ) : (
+          <div>
+            <PostList posts={posts} setPosts={setPosts} getPosts={getPosts} />
+          </div>
         )}
-        </div>
-     
+      </div>
+    </div>
   );
 }
