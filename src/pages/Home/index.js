@@ -2,21 +2,15 @@ import { useContext, useState, useEffect } from "react";
 import { AuthContext } from "context";
 import { NavbarCom, AddPost, Post, PostList } from "components";
 import styles from "./Home.module.css";
-import axios from "axios";
+import { client } from "client";
 
 export function Home() {
   const [posts, setPosts] = useState([]);
   const { user } = useContext(AuthContext);
 
   const getPosts = async () => {
-    // endpoint for getting tweets from the backend
-    const url = `${process.env.REACT_APP_BACKEND_URL}/posts`;
-    // request config that is gonna hold the authorization
-    const config = {
-      headers: {},
-    };
     // make the request
-    const result = await axios.get(url, config);
+    const result = await client.get("/posts");
     /*if(result.data.length>0) {
       var looper = [];
       result.data.forEach(function(singlePost, index) {
