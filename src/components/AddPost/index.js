@@ -35,8 +35,8 @@ return(
         </Form.Group>
         <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
             <Form.Label>Post Body</Form.Label>
-            <Form.Control name="body" as="textarea" rows={3} value = {postBody} onChange={event => setPostBody(event.target.value)} />
-            <Button type="submit" variant="light" size="lg" >Post</Button>
+            <Form.Control name="body" as="textarea" rows={6} value = {postBody} onChange={event => setPostBody(event.target.value)} />
+            <Button type="submit" variant="light" size="lg" class="my-3 btn-lg btn-primary" >Post</Button>
             </Form.Group>
     
     </Form>

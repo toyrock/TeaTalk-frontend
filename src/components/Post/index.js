@@ -66,7 +66,7 @@ handleCancel();
 };
 
 return (
-  <div className="d-flex justify-content-around">
+  <div className="d-flex justify-content-around mb-3">
   <Card border="secondary" style={{ width: '50rem' }}>
   <Card.Header as="h5"><p>{poster.userName}</p></Card.Header>
   <Card.Body>

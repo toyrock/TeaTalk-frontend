@@ -8,7 +8,7 @@ import {Nav, Navbar, Container, img} from "react-bootstrap"
 export function NavbarCom() {
   const { logout, user} = useContext(AuthContext);
   return (
-    <>
+  
   <div>
     <div className="row">
       <div className="col-md-12">
@@ -39,6 +39,6 @@ export function NavbarCom() {
       </div>
     </div>
   </div>
-  </>
+
   );
 }
