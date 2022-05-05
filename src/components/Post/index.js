@@ -3,6 +3,7 @@ import "./Post.module.css";
 import axios from "axios";
 import { AuthContext } from "context";
 import { useContext } from "react";
+import {Card, Button} from "react-bootstrap"
 
 
 export function Post({ id, title, body, poster, setPosts, getPosts, post}){
@@ -65,8 +66,13 @@ handleCancel();
 };
 
 return (
+  <div className="d-flex justify-content-around">
+  <Card border="secondary" style={{ width: '50rem' }}>
+  <Card.Header as="h5"><p>{poster.userName}</p></Card.Header>
+  <Card.Body>
   <div key="{id}">
     <div>
+    <Card.Title>
       {edit ? (
         <input
           value={newPostTitle}
@@ -74,7 +80,9 @@ return (
         />
       ) : (
         <p>{title}</p>
-      )}
+      )} 
+    </Card.Title>   
+    <Card.Text>
       {edit ? (
         <textarea
           value={newPostBody}
@@ -85,30 +93,35 @@ return (
       ) : (
         <p>{body.length > 100 ? `${body.substring(0, 100)}...` : body}</p>
       )}
+      </Card.Text>
       {edit ? (
         <div>
-          <button onClick={handleSave}>Save</button>
-          <button onClick={handleCancel}>Cancel</button>
+          <Button variant="secondary" size="sm" onClick={handleSave}>Save</Button>{' '}
+          <Button variant="secondary" size="sm" onClick={handleCancel}>Cancel</Button>
         </div>
       ) : (
         <div>
           {body.length > 100 && (
-            <button onClick={handleShowAll}>
+            <Button variant="link" size="sm" onClick={handleShowAll}>
               {showAll ? "Read less" : "Read more"}
-            </button>
+            </Button>
           )}
           {user && poster._id === user._id ? (
             <div>
-              <button onClick={handleEdit}>Edit</button>
-              <button onClick={handleDelete}>Delete</button>
+              <Button variant="secondary" size="sm" onClick={handleEdit}>Edit</Button>{' '}
+              <Button variant="danger" size="sm" onClick={handleDelete}>Delete</Button>
             </div>
           ) : (
             <div>&nbsp;</div>
           )}
-          <p>{poster.userName}</p>
+          
         </div>
       )}
-    </div>
-  </div>
+      </div>
+     </div>
+     </Card.Body>
+   </Card>
+</div>
+
 );
 }
