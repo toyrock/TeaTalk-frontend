@@ -1,6 +1,6 @@
 import { useContext, useState, useEffect } from "react";
 import { AuthContext } from "context";
-import { NavbarCom, AddPost, Post, PostList } from "components";
+import { NavbarCom,PostList } from "components";
 import styles from "./Home.module.css";
 import { client } from "client";
 

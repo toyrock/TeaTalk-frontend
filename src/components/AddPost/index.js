@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./AddPost.module.css";
 import { Form, Button } from "react-bootstrap";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { client } from "client";
 
 export function AddPost({ getPosts }) {

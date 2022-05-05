@@ -1,8 +1,7 @@
-import {Link,Route} from "react-router-dom";
 import styles from "./Navbar.module.css";
 import { AuthContext } from "context";
 import { useContext } from "react";
-import {Nav, Navbar, Container, img} from "react-bootstrap"
+import {Nav, Navbar} from "react-bootstrap"
 
 
 export function NavbarCom() {

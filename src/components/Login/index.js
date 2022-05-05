@@ -1,7 +1,6 @@
 import styles from "./Login.module.css";
 import { AuthContext } from "context";
 import { useContext, useState } from "react";
-import { Router } from "react-router-dom";
 import {Form, Button} from "react-bootstrap"
 
 export function Login({handleSignUp}) {
