@@ -10,7 +10,6 @@ function App() {
     <div>
       <NavbarCom />
       <Outlet />
-      footer
     </div>
   );
 }

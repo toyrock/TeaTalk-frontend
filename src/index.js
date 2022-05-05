@@ -4,7 +4,7 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { Home, NotFound, LoginPage, SignupPage, PostPage, AddPostPage } from "pages";
+import { Home, NotFound, LoginPage, SignupPage, AddPostPage } from "pages";
 import { AddPost, PrivateRoute } from "components";
 import { AuthContextProvider } from "context";
 import { createRoot } from 'react-dom/client';

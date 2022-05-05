@@ -1,5 +1,4 @@
 import { Post } from "components/Post";
-
 export function PostList({ posts, setPosts, getPosts }) {
 
     return (
