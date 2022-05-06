@@ -1,6 +1,6 @@
 import { Outlet } from "react-router-dom";
 import styles from "./App.module.css";
-import { NavbarCom} from "components";
+import {NavbarCom} from "components";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
