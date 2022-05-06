@@ -7,7 +7,7 @@ export function LoginPage() {
   return (
     <div>
       <NavbarCom />
-      <h3 className="mx-2">Login before your tea get cold</h3>
+      <h3 className="mx-4">Login before your tea get cold</h3>
       <Login />
     </div>
   );

@@ -7,7 +7,7 @@ export function SignupPage() {
   return (
     <div>
       <NavbarCom />
-      <h3 className="mx-2">Let`s Start TeaTalk</h3>
+      <h3 className="mx-4">Let`s Start TeaTalk</h3>
       <Signup />
     </div>
   );
