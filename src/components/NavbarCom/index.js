@@ -25,16 +25,17 @@ export function NavbarCom() {
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="mr-auto">
-                {user && <Nav.Link href="/profile"> Profile</Nav.Link>}
-                {user && <Nav.Link href="/addPost"> Add Post </Nav.Link>}
-                {!user && <Nav.Link href="/login"> Login </Nav.Link>}
-                {!user && <Nav.Link href="/signup"> Sign Up </Nav.Link>}
-                {/* {user && <Nav.Link href="/"> <p>{user.userName}</p></Nav.Link>} */}
+               {!user || user && <Nav.Link href="/"> HOME </Nav.Link>}
+                {user && <Nav.Link href="/profile"> PROFILE </Nav.Link>}
+                {user && <Nav.Link href="/addPost"> ADD POST </Nav.Link>}
+                {!user && <Nav.Link href="/login"> LOGIN </Nav.Link>}
+                {!user && <Nav.Link href="/signup"> SIGN UP </Nav.Link>}
               </Nav>
                 <Navbar.Text>
-                {user && <Nav.Link onClick={logout}> Logout </Nav.Link>}
+                {user && <Nav.Link onClick={logout}> LOGOUT </Nav.Link>}
               </Navbar.Text>
-            </Navbar.Collapse> 
+            </Navbar.Collapse>
+            <Nav className="mx-4">{user && <Nav.Link href="/profile"> <h5><b>{user.userName}</b></h5></Nav.Link>}</Nav>
         </Navbar>                 
       </div>
     </div>

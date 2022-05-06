@@ -45,9 +45,8 @@ export function AddPost({ getPosts }) {
         />
         <Button
           type="submit"
-          variant="light"
           size="lg"
-          class="my-3 btn-lg btn-primary"
+          className="mt-3 btn-lg btn-secondary"
         >
           Post
         </Button>

@@ -22,11 +22,12 @@ export function UserProfilePage() {
   return (
     <div>
       <NavbarCom />
+      
       <div className={styles.listContainer}>
         <div style={{ width: "50rem" }}>
-        {user && <p>{user.userName}</p>}
-        {user && <p>{user.email}</p>}
-          <h3>My Posts</h3>
+         {user && <h3>{user.userName}</h3>}
+          {user && <h3>{user.email}</h3>}
+          <h3 className="mt-4">My Posts</h3>
           
         </div>
         {user ? (

@@ -9,7 +9,7 @@ export function AddPostPage(){
     return (
         <div>
           <NavbarCom />
-          <h3>Post</h3>
+          <h3 className="mx-4 mt-2">Post</h3>
           <AddPost />
         </div>
       );
