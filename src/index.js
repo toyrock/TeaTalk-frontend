@@ -4,7 +4,7 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { Home, NotFound, LoginPage, SignupPage, AddPostPage } from "pages";
+import { Home, NotFound, LoginPage, SignupPage, AddPostPage, UserProfilePage } from "pages";
 import { AddPost, PrivateRoute } from "components";
 import { AuthContextProvider } from "context";
 import { createRoot } from 'react-dom/client';
@@ -19,6 +19,7 @@ root.render(<React.StrictMode>
           <Route path="signup" element={<SignupPage />} />
           <Route path="login" element={<LoginPage />} />
           <Route path="AddPost" element={<AddPostPage />} />
+          <Route path="profile" element={<UserProfilePage />} />
           <Route path="*" element={<NotFound />} />
       </Routes>
     </AuthContextProvider>
